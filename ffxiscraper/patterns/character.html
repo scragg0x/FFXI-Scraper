@@ -1,0 +1,192 @@
+{*
+    <title>{{ maintenance }}</title>
+*}
+{*
+    <img height="18" border="0" width="20" src="/ff11/image/icls2.gif">
+    <td>{{ guild_name }}</td>
+*}
+{*
+    <div id="cohdtx4">{{ character }}'s profile</div>
+*}
+{*
+    <span class="co3">Title</span></td></tr><tr><td colspan="4" align="center">{{ title }}</td>
+*}
+{*
+    <td width="160" align="center" bgcolor="#406050"><span class="co3">Country&nbsp;/&nbsp;Rank</span></td>
+    </tr>
+    <tr>
+    <td align="center">
+        <div style="width:50px; height:50px; border:1px solid #A99E90;">
+        <table border="0" width="50" height="50" cellpadding="0" cellspacing="0">
+        <tr>
+        <td align="center" valign="middle" bgcolor="#FFFFFF">
+        <img src="{{ avatar_url }}" border="0" alt=""></td>
+*}
+{*
+    border="0" width="32" height="32" alt=""></td>
+    <td align="center">{{ race }} / {{ gender }}</td><td align="center">
+*}
+{*
+    <td><img src="/ff11/image/template/country_{{ nation }}.jpg" alt="" border="0" width="32" height="32"></td>
+*}
+{*
+    <td align="center" width="35%" bgcolor="#305040"><span class="co3">Warrior</span></td>
+    <td align="center" width="15%" bgcolor="#E9E6DA">{{ jobs.war|int }}</td>
+    <td align="center" width="35%" bgcolor="#305040"><span class="co3">Monk</span></td>
+    <td align="center" width="15%" bgcolor="#E9E6DA">{{ jobs.mnk|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#406050"><span class="co3">White Mage</span></td>
+    <td align="center">{{ jobs.whm|int }}</td>
+    <td align="center" bgcolor="#406050"><span class="co3">Black Mage</span></td>
+    <td align="center">{{ jobs.blm|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#305040"><span class="co3">Red Mage</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.rdm|int }}</td>
+    <td align="center" bgcolor="#305040"><span class="co3">Thief</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.thf|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#406050"><span class="co3">Paladin</span></td>
+    <td align="center">{{ jobs.pld|int }}</td>
+    <td align="center" bgcolor="#406050"><span class="co3">Dark Knight</span></td>
+    <td align="center">{{ jobs.drk|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#305040"><span class="co3">Beastmaster</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.bst|int }}</td>
+    <td align="center" bgcolor="#305040"><span class="co3">Bard</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.brd|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#406050"><span class="co3">Ranger</span></td>
+    <td align="center">{{ jobs.rng|int }}</td>
+    <td align="center" bgcolor="#406050"><span class="co3">Samurai</span></td>
+    <td align="center">{{ jobs.sam|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#305040"><span class="co3">Ninja</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.nin|int }}</td>
+    <td align="center" bgcolor="#305040"><span class="co3">Dragoon</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.drg|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#406050"><span class="co3">Summoner</span></td>
+    <td align="center">{{ jobs.smn|int }}</td>
+    <td align="center" bgcolor="#406050"><span class="co3">Blue Mage</span></td>
+    <td align="center">{{ jobs.blu|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#305040"><span class="co3">Corsair</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.cor|int }}</td>
+    <td align="center" bgcolor="#305040"><span class="co3">Puppetmaster</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.pup|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#406050"><span class="co3">Dancer</span></td>
+    <td align="center">{{ jobs.dnc|int }}</td>
+    <td align="center" bgcolor="#406050"><span class="co3">Scholar</span></td>
+    <td align="center">{{ jobs.sch|int }}</td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#305040"><span class="co3">Geomancer</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.geo|int }}</td>
+    <td align="center" bgcolor="#305040"><span class="co3">Rune Fencer</span></td>
+    <td align="center" bgcolor="#E9E6DA">{{ jobs.run|int }}</td>
+*}
+{*
+    <td width="84" align="center" bgcolor="#305040"><span class="co3">Smithing</span></td>
+    <td width="84" align="center"bgcolor="#406050"><span class="co3">Clothcraft</span></td>
+    <td width="84" align="center" bgcolor="#305040"><span class="co3">Alchemy</span></td>
+    <td width="84" align="center"bgcolor="#406050"><span class="co3">Woodworking</span></td>
+    <td width="84" align="center" bgcolor="#305040"><span class="co3">Goldsmithing</span></td>
+    <td width="85" align="center"bgcolor="#406050"><span class="co3">Leathercraft</span></td>
+    <td width="85" align="center" bgcolor="#305040"><span class="co3">Bonecraft</span></td>
+    <td width="85" align="center"bgcolor="#406050"><span class="co3">Cooking</span></td>
+    <td width="85" align="center" bgcolor="#305040"><span class="co3">Fishing</span></td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#E9E6DA">{{ crafts.smithing|int }}</td>
+    <td align="center">{{ crafts.clothcraft|int }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ crafts.alchemy|int }}</td>
+    <td align="center">{{ crafts.woodworking|int }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ crafts.goldsmithing|int }}</td>
+    <td align="center">{{ crafts.leathercraft|int }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ crafts.bonecraft|int }}</td>
+    <td align="center">{{ crafts.cooking|int }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ crafts.fishing|int }}</td>
+*}
+{*
+    <td width="253" align="center" bgcolor="#305040"><span class="co3">San d'Oria</span></td>
+    <td width="254" align="center" bgcolor="#406050"><span class="co3">Bastok</span></td>
+    <td width="253" align="center" bgcolor="#305040"><span class="co3">Windurst</span></td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#E9E6DA">{{ ranks.sandoria|int }}</td>
+    <td align="center">{{ ranks.bastok|int }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ ranks.windurst|int }}</td>
+*}
+{*
+    <td width="380" align="center" bgcolor="#305040"><span class="co3">Zilart</span></td>
+    <td width="380" align="center" bgcolor="#406050"><span class="co3">Promathia</span></td>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#E9E6DA">{{ missions.zilart }}</td>
+    <td align="center">{{ missions.cop }}</td>
+    </tr>
+    <tr>
+    <td width="380" align="center" bgcolor="#406050"><span class="co3">Aht Urhgan / Assault</span></td>
+    <td width="380" align="center" bgcolor="#305040"><span class="co3">Altana / Campaign</span></td>
+    </tr>
+    <tr>
+    <td align="center">{{ missions.toau }} / {{ missions.assault }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ missions.wotg }} / {{ missions.campaign }}</td>
+*}
+{*
+    <td width="253" align="center" bgcolor="#305040"><span class="co3">A Crystalline Prophecy</span></td>
+    <td width="254" align="center" bgcolor="#406050"><span class="co3">A Moogle Kupo d'Etat</span></td>
+    <td width="253" align="center" bgcolor="#305040"><span class="co3">A Shantotto Ascension</span></td>
+    </tr>
+    </tr>
+    <tr>
+    <td align="center" bgcolor="#E9E6DA">{{ missions.cp }}</td>
+    <td align="center">{{ missions.mke }}</td>
+    <td align="center" bgcolor="#E9E6DA">{{ missions.sa }}</td>
+*}
+{*
+    'item':'{{ [items] }}'
+*}
+{*
+    <td background="/ff11en/image/eq{{ [empty]|int }}.gif">
+*}
+{*
+    <table borde="0" height="164" cellpadding="0" cellspacing="0" class="ta3">
+    <tr>
+    <td valign="middle">
+    This information is set to "{{ privacy.equip|bool }}"
+    </td>
+    </tr>
+    </table>
+*}
+{*
+    <table border="0" width="430" height="200" cellpadding="0" cellspacing="0" class="ta2">
+    <tr>
+    <td align="center">
+    This information is set to "{{ privacy.jobs|bool }}"
+    </td>
+    </tr>
+    </table>
+*}
+{*
+    <span class="co4b">Craft skill</span><br>
+    <img src="/ff11/image/spacer.gif" border="0" width="1" height="3" alt=""><br>
+    <td align="center">
+    This information is set to "{{ privacy.crafts|bool }}"
+*}
+{*
+    <span class="co4b">Mission</span><br>
+    <img src="/ff11/image/spacer.gif" border="0" width="1" height="3" alt=""><br>
+    <td align="center">
+    This information is set to "{{ privacy.missions|bool }}"
+*}

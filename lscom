@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+
+"""lscom
+
+Usage:
+  lscom char <server_name> <char_name> <linkshell_name>
+  lscom linkshell <server_name> <linkshell_name>
+  lscom verify <server_name> <char_name> <linkshell_name> <key>
+  lscom validate <server_name> <char_name> <linkshell_name>
+
+Options:
+  -h --help     Show this screen.
+"""
+
+from ffxiscraper import FFXiScraper, DoesNotExist
+from docopt import docopt
+import json
+
+if __name__ == '__main__':
+
+    a = docopt(__doc__)
+    s = FFXiScraper()
+
+    try:
+        ret = None
+
+        if a.get('verify'):
+            data = s.validate_character(a['<server_name>'], a['<char_name>'], [a['<linkshell_name>']]).pop()
+            if data['char_url']:
+                ret = s.verify_character(data['char_url'], a['<key>'])
+
+        if a.get('validate'):
+            ret = s.validate_character(a['<server_name>'], a['<char_name>'], [a['<linkshell_name>']]).pop()
+
+        if a.get('char'):
+            data = s.validate_character(a['<server_name>'], a['<char_name>'], [a['<linkshell_name>']]).pop()
+            if data['char_url']:
+                ret = s.scrape_character(data['char_url'])
+
+        if a.get('linkshell'):
+            data = s.validate_character(a['<server_name>'], a['<char_name>'], [a['<linkshell_name>']]).pop()
+            if data['ls_url']:
+                ret = s.scrape_linkshell(data['ls_url'])
+
+        if ret is not None:
+            print json.dumps(ret, indent=4)
+
+    except DoesNotExist:
+            print "Could not find character"
