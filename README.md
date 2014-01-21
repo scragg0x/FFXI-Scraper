@@ -20,5 +20,5 @@ Usage:
 http://fanzone.playonline.com/lscom/index.do
 
 ## Authors
-- Stanislav Vishnevskiy
-- Matthew Scragg
+- Stanislav Vishnevskiy (http://guildwork.com)
+- Matthew Scragg (http://www.ffxiah.com)
