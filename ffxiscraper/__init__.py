@@ -164,7 +164,7 @@ class FFXiScraper(Scraper):
 
         # Scrape Character Profile
         data = self.scrapemark(self.get_pattern('character.html'),  url=lscom_url, headers=self.headers)
-        data['server'] = constants.FFXI_SERVER_REVERSE_INDEX[int(data['server_index'])]
+        data['server'] = constants.FFXI_SERVER_REVERSE_INDEX[data['server_index']]
 
         # Try again later...
         if data['maintenance'] == 'FINAL FANTASY XI -LINKSHELL COMMUNITY-':
