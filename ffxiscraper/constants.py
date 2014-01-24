@@ -36,6 +36,8 @@ FFXI_SERVER_INDEX = {
     "hades": 32
 }
 
+FFXI_SERVER_REVERSE_INDEX = dict((v, k) for k, v in FFXI_SERVER_INDEX.iteritems())
+
 FFXI_RACES = {
     'Hum': 'Hume',
     'Elv': 'Elvaan',
