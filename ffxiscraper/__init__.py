@@ -1,8 +1,10 @@
-from gevent.pool import Pool
 import itertools
-import requests
-import scrapemark
 import os
+
+from gevent.pool import Pool
+import requests
+
+import scrapemark
 import constants
 
 
@@ -228,7 +230,9 @@ class FFXiScraper(Scraper):
                 'rank': 'Link' + member['rank'],
                 'gender': member['gender'],
                 'race': member['race'],
-                'jobs': member['jobs']
+                'jobs': member['jobs'],
+                'equip_id': member['equip_id'],
+                'view_id': member['view_id']
             }
 
             if member['rank'] == 'Linkshell':

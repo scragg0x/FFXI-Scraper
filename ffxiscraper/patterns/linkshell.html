@@ -20,8 +20,13 @@
 
     </td>
     <td align="center" bgcolor="#{{ trash }}">{{ [roster].race }} / {{ [roster].gender }}</td>
-    <td align="center" bgcolor="#{{ trash }}">
+    <td align="center" bgcolor="#{{ trash }}">{{ trash }}</td>
+    <form>
+        <input type="hidden" name="EQUIP_LINKSHELL_ID_STRING" value="{{ [roster].equip_id }}"/>
+				<input type="hidden" name="VIEW_LINKSHELL_ID_STRING" value="{{ [roster].view_id }}"/>
     {{ trash }}
+
+
     </form>
     <td align="center" bgcolor="#{{ trash }}">{{ [roster].jobs }}</td>
 *}
