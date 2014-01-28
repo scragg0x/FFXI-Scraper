@@ -236,9 +236,15 @@ class FFXiScraper(Scraper):
 
             roster.append(member)
 
+        try:
+            color = data['roster'][0]['lscolor']
+        except (KeyError, IndexError):
+            color = None
+
         return {
             'name': data['name'],
             'server': data['server'],
             'server_index': data['server_index'],
+            'color': color,
             'roster': roster
         }
