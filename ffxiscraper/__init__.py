@@ -215,6 +215,11 @@ class FFXiScraper(Scraper):
         if data['maintenance'] == 'MAINTENANCE':
             raise Maintenance()
 
+        try:
+            data['server'] = constants.FFXI_SERVER_REVERSE_INDEX[data['server_index']]
+        except KeyError:
+            raise DoesNotExist
+
         roster = []
 
         for member in data['roster']:
@@ -233,5 +238,7 @@ class FFXiScraper(Scraper):
 
         return {
             'name': data['name'],
+            'server': data['server'],
+            'server_index': data['server_index'],
             'roster': roster
         }
