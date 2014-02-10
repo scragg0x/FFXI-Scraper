@@ -186,22 +186,32 @@ class FFXiScraper(Scraper):
 
             # Insert slots with no items
             for i in data['empty']:
-                data['items'].insert(i - 1, None)
-                data['item_descriptions'].insert(i - 1, None)
+                for x in ['items', 'item_descriptions', 'item_levels']:
+                    data[x].insert(i - 1, None)
 
             data['equip'] = {}
-            data['equip_descriptions'] = {}
+            data['equip_data'] = {}
 
             for i in xrange(len(constants.FFXI_SLOTS)):
                 data['equip'][constants.FFXI_SLOTS[i]] = data['items'][i]
+
+                if not data['equip_data'].get(constants.FFXI_SLOTS[i]):
+                    data['equip_data'][constants.FFXI_SLOTS[i]] = {}
+
                 if data['item_descriptions'][i]:
                     data['item_descriptions'][i] = data['item_descriptions'][i].replace("<br>", "\n")
-                data['equip_descriptions'][constants.FFXI_SLOTS[i]] = data['item_descriptions'][i]
+
+                if data['item_levels'][i]:
+                    data['item_levels'][i] = int(data['item_levels'][i].replace("Lv.", ""))
+
+                data['equip_data'][constants.FFXI_SLOTS[i]]['description'] = data['item_descriptions'][i]
+                data['equip_data'][constants.FFXI_SLOTS[i]]['level'] = data['item_levels'][i]
 
         data['avatar_url'] = 'http://fanzone.playonline.com' + data['avatar_url']
 
         # Cleanup
         del data['item_descriptions']
+        del data['item_levels']
         del data['maintenance']
         del data['empty']
         del data['items']
