@@ -98,7 +98,7 @@ class FFXiScraper(Scraper):
                      'VIEW_LINKSHELL_ID_STRING=%(VIEW_LINKSHELL_ID_STRING)s'
 
         for result in search['results']:
-            if result['name'] == linkshell_name:
+            if result['name'].lower() == linkshell_name.lower():
                 for form in search['forms']:
                     if result['result_id'] == form['result_id']:
                         return url_format % form
