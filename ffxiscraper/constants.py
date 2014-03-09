@@ -36,7 +36,7 @@ FFXI_SERVER_INDEX = {
     "hades": 32
 }
 
-FFXI_SERVER_REVERSE_INDEX = dict((v, k) for k, v in FFXI_SERVER_INDEX.iteritems())
+FFXI_SERVER_REVERSE_INDEX = dict((v, k) for k, v in FFXI_SERVER_INDEX.items())
 
 FFXI_RACES = {
     'Hum': 'Hume',
@@ -70,6 +70,8 @@ FFXI_JOBS = {
     'geo': 'Geomancer',
     'run': 'Rune Fencer',
 }
+
+FFXI_JOBS_REVERSE = dict((v, k) for k, v in FFXI_JOBS.items())
 
 FFXI_CRAFTS = {
     'clothcraft': 'Clothcraft',

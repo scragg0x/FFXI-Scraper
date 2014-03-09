@@ -207,6 +207,15 @@ class FFXiScraper(Scraper):
                 data['equip_data'][constants.FFXI_SLOTS[i]]['description'] = data['item_descriptions'][i]
                 data['equip_data'][constants.FFXI_SLOTS[i]]['level'] = data['item_levels'][i]
 
+        if data['main_job']:
+            data['main_level'] = int(data['main_job'].split(" ")[-1])
+            data['main_job'] = constants.FFXI_JOBS_REVERSE[' '.join(data['main_job'].split(" ")[0:-1])].upper()
+
+        if data['sub_job']:
+            data['sub_level'] = int(data['sub_job'].split(" ")[-1])
+            data['sub_job'] = constants.FFXI_JOBS_REVERSE[' '.join(data['sub_job'].split(" ")[0:-1])].upper()
+
+
         data['avatar_url'] = 'http://fanzone.playonline.com' + data['avatar_url']
 
         # Cleanup
