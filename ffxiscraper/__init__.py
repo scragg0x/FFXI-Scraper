@@ -30,7 +30,7 @@ class Scraper(object):
         else:
             method = 'GET'
 
-        r = self.s.request(method, url, data=body)
+        r = self.s.request(method, url, data=body, timeout=5)
 
         return {
             'headers': r.headers,
