@@ -12,9 +12,12 @@ Options:
   -h --help     Show this screen.
 """
 
-from ffxiscraper import FFXiScraper, DoesNotExist
-from docopt import docopt
 import json
+
+from docopt import docopt
+
+from ffxiscraper import FFXiScraper, DoesNotExist
+
 
 if __name__ == '__main__':
 
@@ -38,9 +41,9 @@ if __name__ == '__main__':
                 ret = s.scrape_character(data['char_url'])
 
         if a.get('linkshell'):
-            data = s.validate_character(a['<server_name>'], a['<char_name>'], [a['<linkshell_name>']]).pop()
-            if data['ls_url']:
-                ret = s.scrape_linkshell(data['ls_url'])
+            url = s.find_linkshell_url(a['<server_name>'], a['<linkshell_name>'])
+            if url:
+                ret = s.scrape_linkshell(url)
 
         if ret is not None:
             print json.dumps(ret, indent=4)
